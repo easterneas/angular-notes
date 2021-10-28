@@ -1,3 +1,9 @@
 <h3>Passing data between parent and child components</h3>
 
-<app-child-component></app-child-component>
+<app-child-component
+  [counter]="parentCounter"
+  [message]="parentMessage"
+
+  (triggerCounter)="changeCounterOnParent()"
+  (triggerChangeMessage)="changeMessageOnParent()"
+></app-child-component>
