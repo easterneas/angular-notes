@@ -5,7 +5,6 @@ import { Task } from '../../models/Task';
 @Component({
   selector: 'app-template-driven-form',
   templateUrl: './template-driven-form.component.html',
-  styleUrls: ['./template-driven-form.component.css']
 })
 export class TemplateDrivenFormComponent {
   categories: string[] = [
