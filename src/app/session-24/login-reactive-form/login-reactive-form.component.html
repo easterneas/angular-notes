@@ -3,10 +3,15 @@
     <label for="username">Username</label>
     <input
       class="form-control"
-      (change)="toggleFormState(true)" type="text" id="username" name="username" formControlName="username" />
+      (change)="toggleFormState(false)"
+      type="text"
+      id="username"
+      name="username"
+      formControlName="username"
+    />
 
-    <div class="invalid-errors" *ngIf="form.errors?.username">
-      <span *ngIf="form.errors?.username?.required">Username is not valid</span>
+    <div class="invalid-errors" *ngIf="form.submitted && form.errors?.username">
+      <span *ngIf="form.errors?.username?.required">Username is required</span>
       <span *ngIf="form.errors?.username?.minlength">
         Username should have a minimum of {{ form.errors?.username?.minlength?.requiredLength }} character(s).
       </span>
@@ -15,7 +20,17 @@
 
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" name="password" id="password" formControlName="password">
+    <input
+      type="password"
+      name="password"
+      id="password"
+      (change)="toggleFormState(false)"
+      formControlName="password"
+    />
+
+    <div class="invalid-errors" *ngIf="form.submitted && form.errors?.password">
+      <span *ngIf="form.errors?.password?.required">Password is required</span>
+    </div>
   </div>
 
   <input type="submit" value="Login">
