@@ -1,7 +1,16 @@
-<form [formGroup]="loginData" (ngSubmit)="handleLoginForm()">
+<form *ngIf="!loggedIn" [formGroup]="form.inputData" (ngSubmit)="handleLoginForm()">
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" id="username" name="username" formControlName="username" />
+    <input
+      class="form-control"
+      (change)="toggleFormState(true)" type="text" id="username" name="username" formControlName="username" />
+
+    <div class="invalid-errors" *ngIf="form.errors?.username">
+      <span *ngIf="form.errors?.username?.required">Username is not valid</span>
+      <span *ngIf="form.errors?.username?.minlength">
+        Username should have a minimum of {{ form.errors?.username?.minlength?.requiredLength }} character(s).
+      </span>
+    </div>
   </div>
 
   <div class="form-group">
@@ -12,6 +21,12 @@
   <input type="submit" value="Login">
 </form>
 
-<div>
-  <!--  -->
+<div *ngIf="loggedIn">
+  <h2>
+    Hello!
+  </h2>
+
+  <p>You're logged in as {{ userData.name }}.</p>
+
+  <button (click)="logout()">Logout</button>
 </div>
