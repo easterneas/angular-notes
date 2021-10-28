@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TemplateDrivenFormComponent } from './session-24/template-driven-form/template-driven-form.component';
 import { LoginReactiveFormComponent } from './session-24/login-reactive-form/login-reactive-form.component';
+import { AngularModulesModule } from './session-23/angular-modules/angular-modules.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginReactiveFormComponent } from './session-24/login-reactive-form/log
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularModulesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
