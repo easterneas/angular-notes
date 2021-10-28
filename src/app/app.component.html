@@ -24,42 +24,121 @@
   Happy coding! 🎉
 </p>
 
-<h2>
-  Session 19
-</h2>
+<p>Pilih session untuk melihat:</p>
 
-<h3>Intro to Angular Components</h3>
+<form [formGroup]="form.inputData">
+  <select formControlName="session" (change)="changeSession()">
+    <option *ngFor="let session of sessions" [value]="session">Session {{ session }}</option>
+  </select>
+</form>
 
-<app-angular-components></app-angular-components>
+<!-- SESSION 19 -->
 
-<h2>
-  Session 20
-</h2>
+<div *ngIf="currentSession == 19">
+  <h2>
+    Session 19
+  </h2>
 
-<h2>
-  Session 21
-</h2>
+  <h3>Intro to Angular Components</h3>
 
-<h2>
-  Session 22
-</h2>
+  <app-angular-components></app-angular-components>
+</div>
 
-<h2>
-  Session 23
-</h2>
+<!-- SESSION 20 -->
 
-<h2>
-  Session 24
-</h2>
+<div *ngIf="currentSession == 20">
+  <h2>
+    Session 20
+  </h2>
 
-<h3>Angular Forms</h3>
+  <h3>Angular Lifecycle</h3>
 
-<h4>
-  Template-driven Form
-</h4>
+  <h3>Angular Data Binding</h3>
 
-<app-template-driven-form></app-template-driven-form>
+  <h4>One-way binding: Properties</h4>
 
-<h4>Reactive Form</h4>
+  <h4>One-way binding: Events</h4>
 
-<app-login-reactive-form></app-login-reactive-form>
+  <h4>Two-way binding: NgModel</h4>
+</div>
+
+<!-- SESSION 21 -->
+
+<div *ngIf="currentSession == 21">
+  <h2>
+    Session 21
+  </h2>
+
+  <h3>Angular Expressions & Directives</h3>
+</div>
+
+<!-- SESSION 22 -->
+
+<div *ngIf="currentSession == 22">
+  <h2>
+    Session 22
+  </h2>
+
+  <h3>Angular Pipes</h3>
+</div>
+
+<!-- SESSION 23 -->
+
+<div *ngIf="currentSession == 23">
+  <h2>
+    Session 23
+  </h2>
+
+  <h3>Angular Modules</h3>
+
+  <h3>Angular View Encapsulation</h3>
+
+  <blockquote>
+    NOTE: <code>ShadowDOM</code> hanya dapat berjalan jika terdapat
+    minimal 2 DOM terpisah di satu tingkat yang sama. Jika tidak,
+    maka akan tetap mengikuti root DOM.
+  </blockquote>
+
+</div>
+
+<!-- SESSION 24 -->
+
+<div *ngIf="currentSession == 24">
+  <h2>
+    Session 24
+  </h2>
+
+  <h3>Angular Forms</h3>
+
+  <h4>
+    Template-driven Form
+  </h4>
+
+  <app-template-driven-form></app-template-driven-form>
+
+  <h4>Reactive Form</h4>
+
+  <app-login-reactive-form></app-login-reactive-form>
+</div>
+
+<!-- SESSION 25 -->
+
+<div *ngIf="currentSession == 25">
+  <h2>Kamingsun!</h2>
+</div>
+
+<!-- SESSION 26 -->
+
+<div *ngIf="currentSession == 26">
+  <h2>Kamingsun!</h2>
+</div>
+
+<!-- SESSION 27 -->
+
+<div *ngIf="currentSession == 27">
+  <h2>Kamingsun!</h2>
+</div>
+
+
+
+
