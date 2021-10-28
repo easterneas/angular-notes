@@ -91,6 +91,15 @@ export class LoginReactiveFormComponent {
       this.userData.name = this.username?.value
 
       this.loggedIn = true
+
+      // Reset input
+      // ada 2 cara me-reset input:
+      // reset seluruh input pada form
+      this.form.inputData.reset()
+      // atau reset input tertentu pada form
+      // this.username?.reset()
+      // this.password?.reset()
+      // NOTE: dengan cara ini, jangan lupa beri tanda ? setelah getter
     }
   }
 
