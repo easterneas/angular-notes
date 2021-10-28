@@ -1,0 +1,30 @@
+<form (ngSubmit)="handleFormOnSubmit(taskForm)" #taskForm="ngForm">
+  <div class="form-group">
+    <label for="name">Task name</label>
+    <input
+      type="text"
+      name="taskName"
+      id="name"
+      ngModel
+      #taskName="ngModel"
+      required
+    />
+    <div [hidden]="taskName.valid || taskName.pristine">
+      Task name should be written!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select class="form-control" name="category" id="category" ngModel #category="ngModel" required>
+      <option value=""> -- Input here -- </option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+
+    <div [hidden]="category.value !== '' || category.pristine">
+      You have to choose a category!
+    </div>
+  </div>
+
+  <input type="submit" value="submit" [disabled]="!taskForm.form.valid" />
+</form>
