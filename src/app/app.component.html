@@ -99,7 +99,27 @@
     NOTE: <code>ShadowDOM</code> hanya dapat berjalan jika terdapat
     minimal 2 DOM terpisah di satu tingkat yang sama. Jika tidak,
     maka akan tetap mengikuti root DOM.
+    <br>
+    <br>
+    <strong>WARNING!</strong><br>
+    <ol>
+      <li>
+        <code>ShadowDOM</code> tidak di-support oleh semua browser, jadi
+    pergunakan dengan hati-hati!
+      </li>
+      <li>
+        <a href="https://angular.io/guide/view-encapsulation#mixing-encapsulation-modes">
+          Hindari component yang menggunakan encapsulation campuran
+        </a>, atau akan terjadi bug seperti pada demo ini. <b>
+          Refresh browser dan pilih session lain untuk reset styling.
+        </b>
+      </li>
+    </ol>
   </blockquote>
+
+  <app-view-encapsulation-none></app-view-encapsulation-none>
+  <app-view-encapsulation-emulated></app-view-encapsulation-emulated>
+  <app-view-encapsulation-shadow-dom></app-view-encapsulation-shadow-dom>
 
 </div>
 
