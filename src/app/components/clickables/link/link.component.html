@@ -1,0 +1,2 @@
+<a class="link link-accent" *ngIf="linkType === 'internal'" [routerLink]="[ link ]">{{ linkName }}</a>
+<a class="link link-accent" *ngIf="linkType === 'external'" [href]="linkTo">{{ linkName }}</a>

@@ -1,0 +1,41 @@
+
+<h2>
+  Session 23
+</h2>
+
+<h3>Angular Modules</h3>
+
+<app-todo-dashboard></app-todo-dashboard>
+
+<h3>Angular View Encapsulation</h3>
+
+<blockquote>
+  NOTE: <code>ShadowDOM</code> hanya dapat berjalan jika terdapat
+  minimal 2 DOM terpisah di satu tingkat yang sama. Jika tidak,
+  maka akan tetap mengikuti root DOM.
+  <br>
+  <br>
+  <strong>WARNING!</strong><br>
+  <ol>
+    <li>
+      <code>ShadowDOM</code> tidak di-support oleh semua browser, jadi
+  pergunakan dengan hati-hati!
+    </li>
+    <li>
+      <a href="https://angular.io/guide/view-encapsulation#mixing-encapsulation-modes">
+        Hindari component yang menggunakan encapsulation campuran
+      </a>, atau akan terjadi bug seperti pada demo ini. <b>
+        Refresh browser dan pilih session lain untuk reset styling.
+      </b>
+    </li>
+  </ol>
+</blockquote>
+
+https://drive.google.com/file/d/1m0AxbGjiTTSW4wiTzviwCCaCcL6Wyt97/view?usp=sharing
+
+<h4>View Encapsulation: None</h4>
+<app-view-encapsulation-none></app-view-encapsulation-none>
+<h4>View Encapsulation: Emulated dengan None di dalamnya</h4>
+<app-view-encapsulation-emulated></app-view-encapsulation-emulated>
+<h4>View Encapsulation: ShadowDOM dengan Emulated dan None di dalamnya</h4>
+<app-view-encapsulation-shadow-dom></app-view-encapsulation-shadow-dom>
