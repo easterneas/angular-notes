@@ -11,7 +11,7 @@ h5 { @apply text-sm; @apply font-bold; @apply mb-2; @apply pt-4; }
 h6 { @apply text-xs; @apply font-bold; @apply mb-2; @apply pt-4; }
 
 p { @apply mb-2; }
-
+code { @apply bg-gray-700; @apply px-2; @apply py-1; }
 
 /* Forms */
 

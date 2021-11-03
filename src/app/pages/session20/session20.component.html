@@ -4,10 +4,33 @@
 
 <h3>Angular Lifecycle</h3>
 
-<h3>Angular Data Binding</h3>
+<p>
+  Klik salah satu button ini, untuk melihat bagaimana sebuah lifecycle terjadi
+  di dalam Angular. <a href="#log">Klik di sini</a> untuk melihat log-nya.
+</p>
 
-<h4>One-way binding: Properties</h4>
+<button class="btn btn-primary mr-4" (click)="showComponent()">Push me, sir!</button>
+<button class="btn btn-primary mr-4" (click)="hideComponent()">Push me, too, sir!</button>
 
-<h4>One-way binding: Events</h4>
+<div *ngIf="childComponentState">
+  <app-angular-data-binding (eventTrigger)="appendLog($event)"></app-angular-data-binding>
+</div>
 
-<h4>Two-way binding: NgModel</h4>
+<h3 id="log">Lifecycle Log</h3>
+
+<blockquote class="pl-4 my-4 border-l-white">
+  WARNING!
+  <br>
+  Di sini saya mendemonstrasikan <code>ngDoCheck</code>, di mana ketika kalian menulis sesuatu
+  pada input di atas, maka setiap karakter yang kita input akan terekam oleh hook
+  <code>ngDoCheck</code> pada class AngularDataBinding.
+  <br>
+  <code>ngDoCheck</code> jika kita tidak menempatkan kode kita secara optimal, maka
+  akan berdampak pada performa aplikasi yang menurun. Jadi hati-hati!
+</blockquote>
+
+<ul>
+  <li *ngFor="let log of logs">
+    {{ log }}
+  </li>
+</ul>
