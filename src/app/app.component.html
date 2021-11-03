@@ -1,14 +1,14 @@
 <div class="wrapper">
-  <nav>
+  <nav class="mb-8">
     <!--  -->
-    <ul class="flex gap-4">
+    <ul class="flex gap-4 items-center justify-center">
       <li *ngFor="let route of routes.reverse()">
         <a class="btn btn-primary" [routerLink]="[ route ]">{{ route }}</a>
       </li>
     </ul>
   </nav>
-  <div class="main-content">
-    <router-outlet></router-outlet>
+  <div class="main-content h-full">
+    <router-outlet data-theme="black"></router-outlet>
   </div>
 </div>
 
