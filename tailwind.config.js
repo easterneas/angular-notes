@@ -4,13 +4,8 @@ module.exports = {
       './src/**/*.{html,ts}',
     ]
   },
-  darkMode: 'class', // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
+  darkMode: false,
+  mode: 'jit',
   plugins: [
     require('@tailwindcss/typography'),
     require('daisyui')

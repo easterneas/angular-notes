@@ -1,5 +1,5 @@
 <form (ngSubmit)="handleFormOnSubmit(taskForm)" #taskForm="ngForm">
-  <div class="form-group">
+  <div class="form-control">
     <label for="name">Task name</label>
     <input
       type="text"
@@ -14,9 +14,9 @@
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-control">
     <label for="category">Category</label>
-    <select class="form-control" name="category" id="category" ngModel #category="ngModel" required>
+    <select name="category" id="category" ngModel #category="ngModel" required>
       <option value=""> -- Input here -- </option>
       <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
     </select>

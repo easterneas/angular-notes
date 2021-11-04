@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Session21Component implements OnInit {
 
+  name: string = 'Budi'
+  numbers: number[] = [
+    12,
+    21
+  ]
+
   constructor() { }
+
+  changeName(): void {
+    this.name = 'Anto'
+  }
 
   ngOnInit(): void {
   }

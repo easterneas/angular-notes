@@ -8,6 +8,7 @@ import { ViewEncapsulationShadowDomComponent } from './view-encapsulation-shadow
 import { ViewEncapsulationNoneComponent } from './view-encapsulation-none/view-encapsulation-none.component';
 import { Session23Component } from './session23.component';
 import { Session23RoutingModule } from './session23-routing.module';
+import { ClickablesModule } from 'src/app/components/clickables/clickables.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Session23RoutingModule } from './session23-routing.module';
   ],
   imports: [
     CommonModule,
-    Session23RoutingModule
+    Session23RoutingModule,
+    ClickablesModule
   ],
 
   // Kita harus export component yang dibutuhkan, jika kita ingin
