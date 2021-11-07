@@ -5,21 +5,28 @@
 
 /* Base */
 
-/* .main-content {
+.container {
   width: 80vw;
   max-width: 1200px;
   margin: 0 auto;
   @apply pt-16;
-} */
+}
 
 /* Typography */
 
-/* p { @apply mb-2; }
-code { @apply bg-gray-700; @apply px-2; @apply py-1; } */
+h1 { @apply text-6xl; @apply font-bold; @apply mb-6; @apply pt-4; }
+h2 { @apply text-4xl; @apply font-bold; @apply mb-4; @apply pt-4; }
+h3 { @apply text-2xl; @apply font-bold; @apply mb-2; @apply pt-4; }
+h4 { @apply text-xl; @apply font-bold; @apply mb-2; @apply pt-4; }
+h5 { @apply text-lg; @apply font-bold; @apply mb-2; @apply pt-4; }
+h6 { @apply text-sm; @apply font-bold; @apply mb-2; @apply pt-4; }
+
+p { @apply mb-2; }
+code { @apply bg-gray-700; @apply px-2; @apply py-1; }
 
 /* Forms */
 
-/* input {
+input {
   @apply input;
   @apply input-primary;
   @apply input-bordered;
@@ -31,4 +38,20 @@ select {
   @apply select-bordered;
   @apply w-full;
   @apply max-w-xs;
-} */
+}
+
+/* Tables */
+
+table {
+  @apply w-full;
+}
+
+table > thead > tr,
+table > tbody > tr {
+  @apply mb-1;
+}
+
+tr > th:not(:last-child),
+tr > td:not(:last-child) {
+  @apply mr-2;
+}
