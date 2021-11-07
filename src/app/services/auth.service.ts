@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { User } from 'src/app/models/User';
+import { errorHandler } from '../helpers/errorHandler';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,6 @@ export class AuthService {
   // melalui sebuah authorization token pada local storage.
 
   // getter ini akan digunakan pada authentication guard.
-  //
 
   get isAuthenticated() {
     // double-bang (!!) akan mengembalikan nilai truthy/falsy
@@ -42,7 +42,7 @@ export class AuthService {
 
     return this.http
     .post(api, user)
-    .pipe( catchError(this.handleError) )
+    .pipe( catchError(errorHandler) )
   }
 
   signIn(user: User) {
@@ -50,13 +50,6 @@ export class AuthService {
 
     return this.http
     .post(api, user)
-    .pipe( catchError(this.handleError) )
-  }
-
-  handleError(err: HttpErrorResponse){
-    if(err.error instanceof ErrorEvent)
-      return throwError(err.error.message)
-    else
-      return throwError(`Server-side error code: ${err.status}\nMessage: ${err.message}`)
+    .pipe( catchError(errorHandler) )
   }
 }
