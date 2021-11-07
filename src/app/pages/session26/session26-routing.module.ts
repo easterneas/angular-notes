@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { MovieComponent } from './movie/movie.component';
 import { Session26Component } from './session26.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
       // canActivate yang bertipe data Array, lalu masukkan AuthGuard di dalamnya
       // seperti pada contoh ini.
       { path: 'studios', component: StudioComponent, canActivate: [AuthGuard] },
+      { path: 'movies', component: MovieComponent, canActivate: [AuthGuard] },
     ]
   }
 ];

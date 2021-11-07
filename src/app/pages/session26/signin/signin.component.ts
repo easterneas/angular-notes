@@ -37,6 +37,7 @@ export class SigninComponent implements OnInit {
     this.authService
     .signIn(this.form.inputData.value)
     .subscribe((res: any) => {
+      console.log(res)
       if(res) {
         this.authService.setAuthorizationToken(res.token)
 

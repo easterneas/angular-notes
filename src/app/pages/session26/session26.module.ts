@@ -13,6 +13,7 @@ import { StudioComponent } from './studio/studio.component';
 // Session 26 - HttpClient: HTTP Interceptors
 // Import httpInterceptorProviders yang sudah kita buat sebelumnya
 import { httpInterceptorProviders } from 'src/app/http-interceptors';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { httpInterceptorProviders } from 'src/app/http-interceptors';
     SignupComponent,
     SigninComponent,
     StudioComponent,
+    MovieComponent,
   ],
   imports: [
     CommonModule,

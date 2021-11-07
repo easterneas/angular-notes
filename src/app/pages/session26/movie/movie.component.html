@@ -1,0 +1,67 @@
+<div>
+  <div>
+    <h3>Create New Movie</h3>
+    <form [formGroup]="form.inputData" (ngSubmit)="onSubmit()">
+      <div class="form-control">
+        <label for="name">
+          Movie Name
+          <input type="text" name="name" id="name" formControlName="name">
+        </label>
+      </div>
+      <div class="form-control">
+        <label for="yearReleased">
+          Released in
+          <input type="text" name="yearReleased" id="yearReleased" formControlName="yearReleased">
+        </label>
+      </div>
+      <div class="form-control">
+        <label for="StudioId">
+          Published by
+          <select name="StudioId" id="StudioId" formControlName="StudioId">
+            <option *ngFor="let studio of studios" [value]="studio.id">{{ studio.name }}</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-control">
+        <label for="GenreId">
+          Genre
+        <select name="GenreId" id="GenreId" formControlName="GenreId">
+          <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+        </select>
+      </label>
+      </div>
+
+      <input type="submit" value="Save">
+    </form>
+  </div>
+
+  <div>
+    <table *ngIf="movies.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Genre</th>
+          <th>Producer</th>
+          <th>Released in</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <td>{{ movie.id }}</td>
+          <td>
+            <app-link
+              [linkName]="movie.name"
+              [linkTo]="[ movie.id!.toString() ]"
+            ></app-link>
+          </td>
+          <td>{{ movie.Genre!.name }}</td>
+          <td>{{ movie.Studio!.name }}</td>
+          <td>{{ movie.yearReleased }}</td>
+          <td><button class="btn btn-sm btn-primary" (click)="editMovie(movie)">Edit</button> | <button class="btn btn-sm btn-primary" (click)="confirmDelete(movie.id!)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
