@@ -5,32 +5,36 @@
         Angular Notes
       </h1>
 
-      <h6>Only for FSD OCBC 1</h6>
-
       <p class="mb-5">
         Hi! 👋🏻
       </p>
       <p>
-        Ini adalah catatan lecture untuk referensi kalian untuk ke depannya ya...
+        Ini adalah catatan lecture untuk referensi kalian untuk ke depannya,
+        yang berisi apa yang sudah pelajari dari awal materi hingga selesai.
       </p>
       <p>
-        Pastikan kalian selalu lakukan <code>git pull</code> di <strong>jam 6 sore</strong>
-        untuk mendapatkan catatan terkini ya...
+        Untuk unit testing, kalian cukup menjalankan <code>ng test</code> (hanya
+        berlaku pada direktori Session 27), untuk mendapatkan gambaran dasar
+        mengenai bagaimana unit testing dalam Angular bekerja.
       </p>
       <p>
-        Repo ini hanya akan berlaku selama sesi berlangsung, dan akan di-private H+1
-        setelah final project.
-      </p>
-      <p>
-        Happy coding! 🎉
+        Hope these helps, and happy coding! 🎉
       </p>
 
       <!--
         Saya ganti <a> dengan <app-link> untuk menunjukkan component reusablility.
         Kalian dapat melihat component ini pada file:
-        /src/app/components/clickables/Link.component.ts
+        /src/app/components/clickables/link/Link.component.ts
+
+        Component ini dibungkus pada module Clickables, jadi kalian bisa buka
+        file /src/app/components/clickables/clickables.module.ts juga ya!
+
+        <app-link
+          linkType="external"
+          [linkTo]="['https://github.com/easterneas/angular-notes']"
+          [linkName]="'clone this repo @ GitHub'">
+        </app-link>
       -->
-      <app-link linkType="external" [linkTo]="['https://github.com/easterneas/angular-notes']" [linkName]="'clone this repo @ GitHub'"></app-link>
     </div>
   </div>
 </div>
