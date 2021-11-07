@@ -10,7 +10,7 @@ import { Movie } from '../models/Movie';
   providedIn: 'root'
 })
 export class MovieService {
-  endpoint: string = `http://localhost:3000/movies`
+  endpoint: string = `https://fsd-h8-ocbc-my-movies.herokuapp.com/movies`
 
   constructor(
     private http: HttpClient

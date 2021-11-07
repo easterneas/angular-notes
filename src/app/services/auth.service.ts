@@ -10,7 +10,7 @@ import { errorHandler } from '../helpers/errorHandler';
   providedIn: 'root'
 })
 export class AuthService {
-  endpoint: string = `http://localhost:3000`;
+  endpoint: string = `https://fsd-h8-ocbc-my-movies.herokuapp.com`;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
