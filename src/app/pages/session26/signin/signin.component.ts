@@ -35,7 +35,10 @@ export class SigninComponent implements OnInit {
 
   signIn () {
     this.authService
-    .signIn(this.form.inputData.value)
+    .signIn({
+      email: this.email!.value!,
+      password: this.password!.value!
+    })
     .subscribe((res: any) => {
       console.log(res)
       if(res) {

@@ -21,11 +21,11 @@ export class MovieComponent implements OnInit {
   form = {
     state: 'Add',
     inputData: new FormGroup({
-      id: new FormControl(''),
+      id: new FormControl(),
       name: new FormControl('', [ Validators.required ]),
       GenreId: new FormControl(0, [ Validators.required ]),
       StudioId: new FormControl(0, [ Validators.required ]),
-      yearReleased: new FormControl('', [ Validators.required ]),
+      yearReleased: new FormControl(0, [ Validators.required ]),
     }),
   }
 
@@ -78,8 +78,12 @@ export class MovieComponent implements OnInit {
   }
 
   addNewMovie () {
-    const movieData = this.form.inputData.value
-    delete movieData.id
+    const movieData: Movie = {
+      GenreId: this.GenreId!.value,
+      name: this.name!.value!,
+      StudioId: this.StudioId!.value!,
+      yearReleased: this.yearReleased!.value!,
+    }
 
     this.movie
     .addNewMovie(movieData)
@@ -106,7 +110,13 @@ export class MovieComponent implements OnInit {
    * akan mengirimkan inputData ke dalam server.
    */
   updateMovie () {
-    const movieData = this.form.inputData.value
+    const movieData: Movie = {
+      id: this.id?.value,
+      GenreId: this.GenreId!.value,
+      name: this.name!.value!,
+      StudioId: this.StudioId!.value!,
+      yearReleased: this.yearReleased!.value!,
+    }
 
     this.movie
     .updateMovie(movieData)
