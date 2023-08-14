@@ -10,7 +10,7 @@ import { errorHandler } from '../helpers/errorHandler';
   providedIn: 'root'
 })
 export class AuthService {
-  endpoint: string = `https://fsd-h8-ocbc-my-movies.herokuapp.com`;
+  endpoint: string = `https://mysecuremovies-1-l3490438.deta.app`;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -37,7 +37,10 @@ export class AuthService {
     return localStorage.setItem('app_token', token)
   }
 
-  signUp(user: User): Observable<any>{
+  // Omit -- sebuah TypeScript syntax di mana kita dapat menghilangkan
+  // key-key tertentu yang ada pada sebuah type.
+  // Contoh: Omit<Type, 'key'>
+  signUp(user: Omit<User, 'id'>): Observable<any>{
     const api = `${this.endpoint}/register`;
 
     return this.http
@@ -45,7 +48,9 @@ export class AuthService {
     .pipe( catchError(errorHandler) )
   }
 
-  signIn(user: User) {
+  // Bisa juga kita "Omit"-kan lebih dari 1 key, dengan menggunakan
+  // operator Union (simbol: |)
+  signIn(user: Omit<User, 'id' | 'name'>) {
     const api = `${this.endpoint}/login`;
 
     return this.http

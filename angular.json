@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "angular-notes"
+  "cli": {
+    "analytics": false
+  }
 }

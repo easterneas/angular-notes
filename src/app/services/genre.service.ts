@@ -9,7 +9,7 @@ import { errorHandler } from '../helpers/errorHandler';
   providedIn: 'root'
 })
 export class GenreService {
-  endpoint: string = `https://fsd-h8-ocbc-my-movies.herokuapp.com/genres`
+  endpoint: string = `https://mysecuremovies-1-l3490438.deta.app/genres`
 
   constructor(
     private http: HttpClient
