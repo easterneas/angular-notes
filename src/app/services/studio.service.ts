@@ -8,7 +8,7 @@ import { errorHandler } from '../helpers/errorHandler';
   providedIn: 'root'
 })
 export class StudioService {
-  endpoint: string = `https://fsd-h8-ocbc-my-movies.herokuapp.com/studios`
+  endpoint: string = `https://mysecuremovies-1-l3490438.deta.app/studios`
 
   constructor(
     private http: HttpClient

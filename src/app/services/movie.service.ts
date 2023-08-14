@@ -10,7 +10,7 @@ import { Movie } from '../models/Movie';
   providedIn: 'root'
 })
 export class MovieService {
-  endpoint: string = `https://fsd-h8-ocbc-my-movies.herokuapp.com/movies`
+  endpoint: string = `https://mysecuremovies-1-l3490438.deta.app/movies`
 
   constructor(
     private http: HttpClient
